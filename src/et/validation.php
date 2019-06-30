@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines
@@ -32,6 +31,7 @@ return [
     'boolean'              => ':attribute väli peab olema tõene või väär.',
     'confirmed'            => ':attribute kinnitus ei vasta.',
     'date'                 => ':attribute pole kehtiv kuupäev.',
+    'date_equals'          => 'The :attribute must be a date equal to :date.',
     'date_format'          => ':attribute ei vasta formaadile :format.',
     'different'            => ':attribute ja :other peavad olema erinevad.',
     'digits'               => ':attribute peab olema :digits numbrit.',
@@ -42,6 +42,18 @@ return [
     'exists'               => 'Valitud :attribute on vigane.',
     'file'                 => ':attribute peab olema fail.',
     'filled'               => ':attribute väli on nõutav.',
+    'gt'                   => [
+        'numeric' => 'The :attribute must be greater than :value.',
+        'file'    => 'The :attribute must be greater than :value kilobytes.',
+        'string'  => 'The :attribute must be greater than :value characters.',
+        'array'   => 'The :attribute must have more than :value items.',
+    ],
+    'gte'                  => [
+        'numeric' => 'The :attribute must be greater than or equal :value.',
+        'file'    => 'The :attribute must be greater than or equal :value kilobytes.',
+        'string'  => 'The :attribute must be greater than or equal :value characters.',
+        'array'   => 'The :attribute must have :value items or more.',
+    ],
     'image'                => ':attribute peab olema pilt.',
     'in'                   => 'Valitud :attribute on vigane.',
     'in_array'             => ':attribute väli ei eksisteeri :other sees.',
@@ -50,6 +62,18 @@ return [
     'ipv4'                 => ':attribute peab olema kehtiv IPv4 aadress.',
     'ipv6'                 => ':attribute peab olema kehtiv IPv6 aadress.',
     'json'                 => ':attribute peab olema kehtiv JSON string.',
+    'lt'                   => [
+        'numeric' => 'The :attribute must be less than :value.',
+        'file'    => 'The :attribute must be less than :value kilobytes.',
+        'string'  => 'The :attribute must be less than :value characters.',
+        'array'   => 'The :attribute must have less than :value items.',
+    ],
+    'lte'                  => [
+        'numeric' => 'The :attribute must be less than or equal :value.',
+        'file'    => 'The :attribute must be less than or equal :value kilobytes.',
+        'string'  => 'The :attribute must be less than or equal :value characters.',
+        'array'   => 'The :attribute must not have more than :value items.',
+    ],
     'max'                  => [
         'numeric' => ':attribute ei tohi olla suurem kui :max.',
         'file'    => ':attribute ei tohi olla suurem kui :max kilobaiti.',
@@ -65,6 +89,7 @@ return [
         'array'   => ':attribute peab olema vähemalt :min kirjet.',
     ],
     'not_in'               => 'Valitud :attribute on vigane.',
+    'not_regex'            => 'The :attribute format is invalid.',
     'numeric'              => ':attribute peab olema number.',
     'present'              => ':attribute väli peab olema esindatud.',
     'regex'                => ':attribute vorming on vigane.',
@@ -82,11 +107,13 @@ return [
         'string'  => ':attribute peab olema :size tähemärki.',
         'array'   => ':attribute peab sisaldama :size kirjet.',
     ],
+    'starts_with'          => 'The :attribute must start with one of the following: :values',
     'string'               => ':attribute peab olema string.',
     'timezone'             => ':attribute peab olema kehtiv tsoon.',
     'unique'               => ':attribute on juba hõivatud.',
     'uploaded'             => ':attribute ei õnnestunud laadida.',
     'url'                  => ':attribute vorming on vigane.',
+    'uuid'                 => 'The :attribute must be a valid UUID.',
 
     /*
     |--------------------------------------------------------------------------
@@ -124,5 +151,4 @@ return [
         'result_text_under_image' => 'Tulemuse tekst pildi all',
         'short_text'              => 'Lühitekst',
     ],
-
 ];

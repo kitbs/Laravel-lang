@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines
@@ -9,7 +8,7 @@ return [
     |
     | The following language lines contain the default error messages used by
     | the validator class. Some of these rules have multiple versions such
-    | such as the size rules. Feel free to tweak each of these messages.
+    | as the size rules. Feel free to tweak each of these messages.
     |
     */
 
@@ -32,6 +31,7 @@ return [
     'boolean'              => 'שדה :attribute חייב להיות אמת או שקר.',
     'confirmed'            => 'שדה האישור של :attribute לא תואם.',
     'date'                 => 'שדה :attribute אינו תאריך תקני.',
+    'date_equals'          => 'The :attribute must be a date equal to :date.',
     'date_format'          => 'שדה :attribute לא תואם את הפורמט :format.',
     'different'            => 'שדה :attribute ושדה :other חייבים להיות שונים.',
     'digits'               => 'שדה :attribute חייב להיות בעל :digits ספרות.',
@@ -42,6 +42,18 @@ return [
     'exists'               => 'בחירת ה-:attribute אינה תקפה.',
     'file'                 => 'שדה :attribute חייב להיות קובץ.',
     'filled'               => 'שדה :attribute הוא חובה.',
+    'gt'                   => [
+        'numeric' => 'The :attribute must be greater than :value.',
+        'file'    => 'The :attribute must be greater than :value kilobytes.',
+        'string'  => 'The :attribute must be greater than :value characters.',
+        'array'   => 'The :attribute must have more than :value items.',
+    ],
+    'gte'                  => [
+        'numeric' => 'The :attribute must be greater than or equal :value.',
+        'file'    => 'The :attribute must be greater than or equal :value kilobytes.',
+        'string'  => 'The :attribute must be greater than or equal :value characters.',
+        'array'   => 'The :attribute must have :value items or more.',
+    ],
     'image'                => 'שדה :attribute חייב להיות תמונה.',
     'in'                   => 'בחירת ה-:attribute אינה תקפה.',
     'in_array'             => 'שדה :attribute לא קיים ב:other.',
@@ -50,6 +62,18 @@ return [
     'ipv4'                 => 'שדה :attribute חייב להיות כתובת IPv4 תקנית.',
     'ipv6'                 => 'שדה :attribute חייב להיות כתובת IPv6 תקנית.',
     'json'                 => 'שדה :attribute חייב להיות מחרוזת JSON תקנית.',
+    'lt'                   => [
+        'numeric' => 'The :attribute must be less than :value.',
+        'file'    => 'The :attribute must be less than :value kilobytes.',
+        'string'  => 'The :attribute must be less than :value characters.',
+        'array'   => 'The :attribute must have less than :value items.',
+    ],
+    'lte'                  => [
+        'numeric' => 'The :attribute must be less than or equal :value.',
+        'file'    => 'The :attribute must be less than or equal :value kilobytes.',
+        'string'  => 'The :attribute must be less than or equal :value characters.',
+        'array'   => 'The :attribute must not have more than :value items.',
+    ],
     'max'                  => [
         'numeric' => 'שדה :attribute אינו יכול להיות גדול מ-:max.',
         'file'    => 'שדה :attribute לא יכול להיות גדול מ-:max קילובייטים.',
@@ -65,6 +89,7 @@ return [
         'array'   => 'שדה :attribute חייב להיות לפחות :min פריטים.',
     ],
     'not_in'               => 'בחירת ה-:attribute אינה תקפה.',
+    'not_regex'            => 'The :attribute format is invalid.',
     'numeric'              => 'שדה :attribute חייב להיות מספר.',
     'present'              => 'שדה :attribute חייב להיות קיים.',
     'regex'                => 'שדה :attribute בעל פורמט שאינו תקין.',
@@ -82,11 +107,13 @@ return [
         'string'  => 'שדה :attribute חייב להיות :size תווים.',
         'array'   => 'שדה :attribute חייב להכיל :size פריטים.',
     ],
+    'starts_with'          => 'The :attribute must start with one of the following: :values',
     'string'               => 'שדה :attribute חייב להיות מחרוזת.',
     'timezone'             => 'שדה :attribute חייב להיות איזור תקני.',
     'unique'               => 'שדה :attribute כבר תפוס.',
     'uploaded'             => 'שדה :attribute ארעה שגיאה בעת ההעלאה.',
     'url'                  => 'שדה :attribute בעל פורמט שאינו תקין.',
+    'uuid'                 => 'The :attribute must be a valid UUID.',
 
     /*
     |--------------------------------------------------------------------------
@@ -99,7 +126,7 @@ return [
     |
     */
 
-    'custom'               => [
+    'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
@@ -117,7 +144,5 @@ return [
     */
 
     'attributes' => [
-        //
     ],
-
 ];

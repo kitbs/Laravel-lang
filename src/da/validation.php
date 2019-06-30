@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines
@@ -9,7 +8,7 @@ return [
     |
     | The following language lines contain the default error messages used by
     | the validator class. Some of these rules have multiple versions such
-    | such as the size rules. Feel free to tweak each of these messages.
+    | as the size rules. Feel free to tweak each of these messages.
     |
     */
 
@@ -24,36 +23,61 @@ return [
     'before'               => ':attribute skal være en dato før :date.',
     'before_or_equal'      => ':attribute skal være en dato før eller lig med :date.',
     'between'              => [
-        'numeric' => ':attribute skal være mellem :min - :max.',
-        'file'    => ':attribute skal være mellem :min - :max kilobytes.',
-        'string'  => ':attribute skal være mellem :min - :max tegn.',
-        'array'   => ':attribute skal indeholde mellem :min - :max elementer.',
+        'numeric' => ':attribute skal være mellem :min og :max.',
+        'file'    => ':attribute skal være mellem :min og :max kilobytes.',
+        'string'  => ':attribute skal være mellem :min og :max tegn.',
+        'array'   => ':attribute skal indeholde mellem :min og :max elementer.',
     ],
-    'boolean'              => ':attribute skal være sandt eller falsk',
+    'boolean'              => ':attribute skal være sand eller falsk.',
     'confirmed'            => ':attribute er ikke det samme som bekræftelsesfeltet.',
     'date'                 => ':attribute er ikke en gyldig dato.',
+    'date_equals'          => ':attribute skal være en dato lig med :date.',
     'date_format'          => ':attribute matcher ikke formatet :format.',
     'different'            => ':attribute og :other skal være forskellige.',
     'digits'               => ':attribute skal have :digits cifre.',
     'digits_between'       => ':attribute skal have mellem :min og :max cifre.',
-    'dimensions'           => ':attribute har forkerte billede dimensioner.',
+    'dimensions'           => ':attribute har forkerte billeddimensioner.',
     'distinct'             => ':attribute har en duplikatværdi.',
     'email'                => ':attribute skal være en gyldig e-mailadresse.',
-    'exists'               => 'Det valgte :attribute er ugyldig.',
+    'exists'               => 'Valgte :attribute er ugyldig.',
     'file'                 => ':attribute skal være en fil.',
     'filled'               => ':attribute skal udfyldes.',
+    'gt'                   => [
+        'numeric' => ':attribute skal være større end :value.',
+        'file'    => ':attribute skal være større end :value kilobytes.',
+        'string'  => ':attribute skal være mere end :value tegn.',
+        'array'   => ':attribute skal være mere end :value elementer.',
+    ],
+    'gte'                  => [
+        'numeric' => ':attribute skal være større end eller lig med :value.',
+        'file'    => ':attribute skal være større end eller lig med :value kilobytes.',
+        'string'  => ':attribute skal være mere end eller lig med :value tegn.',
+        'array'   => ':attribute skal have :value elementer eller mere.',
+    ],
     'image'                => ':attribute skal være et billede.',
-    'in'                   => 'Det valgte :attribute er ugyldig.',
+    'in'                   => 'Valgte :attribute er ugyldig.',
     'in_array'             => ':attribute eksisterer ikke i :other.',
     'integer'              => ':attribute skal være et heltal.',
     'ip'                   => ':attribute skal være en gyldig IP adresse.',
     'ipv4'                 => ':attribute skal være en gyldig IPv4 adresse.',
     'ipv6'                 => ':attribute skal være en gyldig IPv6 adresse.',
     'json'                 => ':attribute skal være en gyldig JSON streng.',
+    'lt'                   => [
+        'numeric' => ':attribute skal være mindre end :value.',
+        'file'    => ':attribute skal være mindre end :value kilobytes.',
+        'string'  => ':attribute skal være mindre end :value tegn.',
+        'array'   => ':attribute skal have mindre end :value items.',
+    ],
+    'lte'                  => [
+        'numeric' => ':attribute skal være mindre eller lig med :value.',
+        'file'    => ':attribute skal være mindre eller lig med :value kilobytes.',
+        'string'  => ':attribute skal være mindre eller lig med :value tegn.',
+        'array'   => ':attribute må ikke have mere end :value elementer.',
+    ],
     'max'                  => [
-        'numeric' => ':attribute skal være højest :max.',
-        'file'    => ':attribute skal være højest :max kilobytes.',
-        'string'  => ':attribute skal være højest :max tegn.',
+        'numeric' => ':attribute må ikke være større end :max.',
+        'file'    => ':attribute må ikke være større end :max kilobytes.',
+        'string'  => ':attribute må ikke være mere end :max tegn.',
         'array'   => ':attribute må ikke indeholde mere end :max elementer.',
     ],
     'mimes'                => ':attribute skal være en fil af typen: :values.',
@@ -64,7 +88,8 @@ return [
         'string'  => ':attribute skal være mindst :min tegn.',
         'array'   => ':attribute skal indeholde mindst :min elementer.',
     ],
-    'not_in'               => 'Den valgte :attribute er ugyldig.',
+    'not_in'               => 'Valgte :attribute er ugyldig.',
+    'not_regex'            => 'Formatet for :attribute er ugyldigt.',
     'numeric'              => ':attribute skal være et tal.',
     'present'              => ':attribute skal være tilstede.',
     'regex'                => ':attribute formatet er ugyldigt.',
@@ -82,11 +107,13 @@ return [
         'string'  => ':attribute skal være :size tegn lang.',
         'array'   => ':attribute skal indeholde :size elementer.',
     ],
+    'starts_with'          => ':attribute skal starte med én af følgende: :values.',
     'string'               => ':attribute skal være en streng.',
     'timezone'             => ':attribute skal være en gyldig tidszone.',
     'unique'               => ':attribute er allerede taget.',
-    'uploaded'             => ':attribute fejlene i uploaden.',
+    'uploaded'             => ':attribute fejlede i upload.',
     'url'                  => ':attribute formatet er ugyldigt.',
+    'uuid'                 => ':attribute skal være en gyldig UUID.',
 
     /*
     |--------------------------------------------------------------------------
@@ -99,7 +126,7 @@ return [
     |
     */
 
-    'custom'               => [
+    'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
@@ -116,8 +143,6 @@ return [
     |
     */
 
-    'attributes'           => [
-        //
+    'attributes' => [
     ],
-
 ];

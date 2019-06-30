@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines
@@ -9,7 +8,7 @@ return [
     |
     | The following language lines contain the default error messages used by
     | the validator class. Some of these rules have multiple versions such
-    | such as the size rules. Feel free to tweak each of these messages.
+    | as the size rules. Feel free to tweak each of these messages.
     |
     */
 
@@ -32,6 +31,7 @@ return [
     'boolean'              => ':attribute moet ja of nee zijn.',
     'confirmed'            => ':attribute bevestiging komt niet overeen.',
     'date'                 => ':attribute moet een datum bevatten.',
+    'date_equals'          => ':attribute moet een datum gelijk aan :date zijn.',
     'date_format'          => ':attribute moet een geldig datum formaat bevatten.',
     'different'            => ':attribute en :other moeten verschillend zijn.',
     'digits'               => ':attribute moet bestaan uit :digits cijfers.',
@@ -42,6 +42,18 @@ return [
     'exists'               => ':attribute bestaat niet.',
     'file'                 => ':attribute moet een bestand zijn.',
     'filled'               => ':attribute is verplicht.',
+    'gt'                   => [
+        'numeric' => 'De :attribute moet groter zijn dan :value.',
+        'file'    => 'De :attribute moet groter zijn dan :value kilobytes.',
+        'string'  => 'De :attribute moet meer dan :value tekens bevatten.',
+        'array'   => 'De :attribute moet meer dan :value waardes bevatten.',
+    ],
+    'gte'                  => [
+        'numeric' => 'De :attribute moet groter of gelijk zijn aan :value.',
+        'file'    => 'De :attribute moet groter of gelijk zijn aan :value kilobytes.',
+        'string'  => 'De :attribute moet minimaal :value tekens bevatten.',
+        'array'   => 'De :attribute moet :value waardes of meer bevatten.',
+    ],
     'image'                => ':attribute moet een afbeelding zijn.',
     'in'                   => ':attribute is ongeldig.',
     'in_array'             => ':attribute bestaat niet in :other.',
@@ -50,10 +62,22 @@ return [
     'ipv4'                 => ':attribute moet een geldig IPv4-adres zijn.',
     'ipv6'                 => ':attribute moet een geldig IPv6-adres zijn.',
     'json'                 => ':attribute moet een geldige JSON-string zijn.',
+    'lt'                   => [
+        'numeric' => 'De :attribute moet kleiner zijn dan :value.',
+        'file'    => 'De :attribute moet kleiner zijn dan :value kilobytes.',
+        'string'  => 'De :attribute moet minder dan :value tekens bevatten.',
+        'array'   => 'De :attribute moet minder dan :value waardes bevatten.',
+    ],
+    'lte'                  => [
+        'numeric' => 'De :attribute moet kleiner of gelijk zijn aan :value.',
+        'file'    => 'De :attribute moet kleiner of gelijk zijn aan :value kilobytes.',
+        'string'  => 'De :attribute moet maximaal :value tekens bevatten.',
+        'array'   => 'De :attribute moet :value waardes of minder bevatten.',
+    ],
     'max'                  => [
         'numeric' => ':attribute mag niet hoger dan :max zijn.',
         'file'    => ':attribute mag niet meer dan :max kilobytes zijn.',
-        'string'  => ':attribute mag niet uit meer dan :max karakters bestaan.',
+        'string'  => ':attribute mag niet uit meer dan :max tekens bestaan.',
         'array'   => ':attribute mag niet meer dan :max items bevatten.',
     ],
     'mimes'                => ':attribute moet een bestand zijn van het bestandstype :values.',
@@ -61,10 +85,11 @@ return [
     'min'                  => [
         'numeric' => ':attribute moet minimaal :min zijn.',
         'file'    => ':attribute moet minimaal :min kilobytes zijn.',
-        'string'  => ':attribute moet minimaal :min karakters zijn.',
+        'string'  => ':attribute moet minimaal :min tekens zijn.',
         'array'   => ':attribute moet minimaal :min items bevatten.',
     ],
     'not_in'               => 'Het formaat van :attribute is ongeldig.',
+    'not_regex'            => 'De :attribute formaat is ongeldig.',
     'numeric'              => ':attribute moet een nummer zijn.',
     'present'              => ':attribute moet bestaan.',
     'regex'                => ':attribute formaat is ongeldig.',
@@ -79,14 +104,16 @@ return [
     'size'                 => [
         'numeric' => ':attribute moet :size zijn.',
         'file'    => ':attribute moet :size kilobyte zijn.',
-        'string'  => ':attribute moet :size karakters zijn.',
+        'string'  => ':attribute moet :size tekens zijn.',
         'array'   => ':attribute moet :size items bevatten.',
     ],
-    'string'               => ':attribute moet een tekenreeks zijn.',
+    'starts_with'          => ':attribute moet starten met een van de volgende: :values',
+    'string'               => ':attribute moet een tekst zijn.',
     'timezone'             => ':attribute moet een geldige tijdzone zijn.',
     'unique'               => ':attribute is al in gebruik.',
     'uploaded'             => 'Het uploaden van :attribute is mislukt.',
-    'url'                  => ':attribute is geen geldige URL.',
+    'url'                  => ':attribute moet een geldig URL zijn.',
+    'uuid'                 => ':attribute moet een geldig UUID zijn.',
 
     /*
     |--------------------------------------------------------------------------
@@ -99,7 +126,7 @@ return [
     |
     */
 
-    'custom'               => [
+    'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
@@ -116,7 +143,7 @@ return [
     |
     */
 
-    'attributes'           => [
+    'attributes' => [
         'address'               => 'adres',
         'age'                   => 'leeftijd',
         'available'             => 'beschikbaar',
@@ -149,5 +176,4 @@ return [
         'username'              => 'gebruikersnaam',
         'year'                  => 'jaar',
     ],
-
 ];
